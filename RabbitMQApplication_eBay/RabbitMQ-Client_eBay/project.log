@@ -1,0 +1,151 @@
+12:39:57.148 INFO  divya.ebay@gmail.com is the session 
+12:40:03.307 INFO  The user divya.ebay@gmail.com accessing /homepage 
+14:09:48.029 INFO  The user divya.ebay@gmail.com accessing /homepage 
+14:09:56.015 INFO  The user divya.ebay@gmail.com logging out 
+14:10:09.248 INFO  vidya.ebay@gmail.com is the session 
+14:10:10.791 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+14:10:20.825 INFO  The user vidya.ebay@gmail.com logging out 
+14:10:31.864 INFO  vidya.ebay@gmail.com is the session 
+14:10:33.168 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+14:11:03.578 INFO  The user vidya.ebay@gmail.com logging out 
+14:12:30.164 INFO  vidya.ebay@gmail.com is the session 
+14:12:31.765 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+14:12:45.316 INFO  The user vidya.ebay@gmail.com logging out 
+14:14:57.459 INFO  divya.ebay@gmail.com is the session 
+14:14:59.442 INFO  The user divya.ebay@gmail.com accessing /homepage 
+14:15:01.956 INFO  The user divya.ebay@gmail.com logging out 
+14:22:02.997 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+14:22:16.453 INFO  vidya.ebay@gmail.com is the session 
+14:22:18.406 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+14:22:25.878 INFO  The user vidya.ebay@gmail.com logging out 
+14:25:52.898 INFO  vidya.ebay@gmail.com is the session 
+14:25:54.244 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+14:25:56.474 INFO  The user vidya.ebay@gmail.com logging out 
+14:26:33.003 INFO  vidya.ebay@gmail.com is the session 
+14:26:34.336 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+14:26:42.482 INFO  The user vidya.ebay@gmail.com logging out 
+14:50:16.585 INFO  vidya.ebay@gmail.com is the session 
+14:50:17.913 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+14:50:20.436 INFO  The user vidya.ebay@gmail.com accessing the advertisements page 
+14:51:41.730 INFO  The user vidya.ebay@gmail.com accessing the advertisements page 
+15:14:21.743 INFO  The user vidya.ebay@gmail.com accessing the advertisements page 
+15:14:31.637 INFO  The user vidya.ebay@gmail.com adding a new bid on advertisement with id 2 
+15:39:43.835 INFO  The user vidya.ebay@gmail.com accessing the advertisements page 
+15:39:53.408 INFO  The user vidya.ebay@gmail.com accessing /marketPlace 
+15:40:10.410 INFO  The user vidya.ebay@gmail.com adding a new advertisement 
+15:40:44.714 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+15:40:46.494 INFO  The user vidya.ebay@gmail.com accessing the advertisements page 
+16:00:48.962 INFO  The user vidya.ebay@gmail.com accessing the advertisements page 
+16:00:54.794 INFO  The user vidya.ebay@gmail.com added iPhone 5 to cart 
+16:01:52.348 INFO  The user vidya.ebay@gmail.com placed an order 
+16:01:57.327 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+16:01:58.771 INFO  The user vidya.ebay@gmail.com accessing the advertisements page 
+16:06:35.509 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:06:38.598 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:06:41.474 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:06:43.423 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:24:57.734 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:25:00.617 INFO  The user vidya.ebay@gmail.com logging out 
+16:25:11.465 INFO  vidya.ebay@gmail.com is the session 
+16:25:12.873 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+16:25:18.210 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:29:05.332 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:31:14.418 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:33:38.429 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:35:37.489 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+16:35:40.084 INFO  The user vidya.ebay@gmail.com accessing the advertisements page 
+16:35:45.421 INFO  The user vidya.ebay@gmail.com accessing /marketPlace 
+12:36:09.584 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+12:38:13.661 INFO  The user vidya.ebay@gmail.com logging out 
+12:38:49.943 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+12:39:03.149 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+12:39:18.891 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+12:39:28.613 INFO  The user vidya.ebay@gmail.com logging out 
+12:40:27.834 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+12:40:31.896 INFO  The user vidya.ebay@gmail.com logging out 
+12:40:45.058 INFO  Session expired for the user undefined 
+12:57:29.634 INFO  Session expired for the user undefined 
+13:00:35.030 INFO  Session expired for the user undefined 
+13:02:23.146 INFO  Session expired for the user undefined 
+13:03:43.556 INFO  divya.ebay@gmail.com is the session 
+13:03:44.795 INFO  The user divya.ebay@gmail.com accessing /homepage 
+13:03:50.275 INFO  The user divya.ebay@gmail.com logging out 
+13:04:07.048 INFO  divya.ebay@gmail.com is the session 
+13:04:08.183 INFO  The user divya.ebay@gmail.com accessing /homepage 
+13:07:57.154 INFO  The user divya.ebay@gmail.com logging out 
+13:27:03.993 INFO  divya.ebay@gmail.com is the session 
+13:59:37.926 INFO  divya.ebay@gmail.com is the session 
+14:00:40.342 INFO  divya.ebay@gmail.com is the session 
+14:17:54.568 INFO  divya.ebay@gmail.com is the session 
+14:17:54.586 INFO  The user divya.ebay@gmail.com accessing /homepage 
+14:18:00.513 INFO  The user divya.ebay@gmail.com logging out 
+15:01:51.948 INFO  The user undefined logging out 
+15:02:33.789 INFO  The user undefined logging out 
+17:28:08.811 INFO  The user divya.ebay@gmail.com logging out 
+17:33:50.190 INFO  The user divya.ebay@gmail.com logging out 
+17:34:05.872 INFO  The user divya.ebay@gmail.com accessing /homepage 
+17:37:59.447 INFO  The user divya.ebay@gmail.com logging out 
+17:38:45.484 INFO  The user divya.ebay@gmail.com accessing /homepage 
+17:43:12.982 INFO  The user divya.ebay@gmail.com accessing /homepage 
+17:43:14.591 INFO  The user divya.ebay@gmail.com logging out 
+17:52:02.347 INFO  The user divya.ebay@gmail.com accessing /homepage 
+17:52:04.488 INFO  The user divya.ebay@gmail.com logging out 
+19:22:08.522 INFO  The user chinky@ebay.com accessing /homepage 
+19:22:13.267 INFO  The user chinky@ebay.com logging out 
+19:34:09.562 INFO  The user chinky@ebay.com accessing /homepage 
+19:34:12.297 INFO  The user chinky@ebay.com logging out 
+21:24:33.587 INFO  The user chinky@ebay.com accessing /homepage 
+21:24:41.567 INFO  The user chinky@ebay.com accessing the advertisements page 
+21:24:45.188 INFO  The user chinky@ebay.com accessing /marketPlace 
+21:31:01.055 INFO  The user chinky@ebay.com accessing /homepage 
+21:31:03.626 INFO  The user chinky@ebay.com accessing the user profile 
+21:31:21.247 INFO  The user chinky@ebay.com accessing /homepage 
+21:31:24.194 INFO  The user chinky@ebay.com accessing the advertisements page 
+21:31:25.284 INFO  The user chinky@ebay.com accessing /marketPlace 
+21:31:26.776 INFO  The user chinky@ebay.com logging out 
+23:06:41.881 INFO  The user divya.ebay@gmail.com accessing /homepage 
+23:17:21.700 INFO  The user divya.ebay@gmail.com accessing /homepage 
+23:21:56.018 INFO  The user divya.ebay@gmail.com logging out 
+23:22:31.314 INFO  The user divya.ebay@gmail.com accessing /homepage 
+23:24:36.339 INFO  The user divya.ebay@gmail.com logging out 
+23:28:04.573 INFO  The user divya.ebay@gmail.com accessing /homepage 
+23:28:11.207 INFO  The user divya.ebay@gmail.com logging out 
+23:29:40.438 INFO  The user divya.ebay@gmail.com accessing /homepage 
+23:29:44.271 INFO  The user divya.ebay@gmail.com accessing /userprofile 
+23:31:36.777 INFO  The user divya.ebay@gmail.com accessing /marketPlace 
+23:36:21.921 INFO  The user divya.ebay@gmail.com adding a new advertisement 
+23:40:06.139 INFO  The user divya.ebay@gmail.com adding a new advertisement 
+23:40:28.380 INFO  The user divya.ebay@gmail.com logging out 
+23:41:15.637 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+23:41:19.164 INFO  The user vidya.ebay@gmail.com accessing /marketPlace 
+23:42:46.372 INFO  The user vidya.ebay@gmail.com adding a new advertisement 
+23:43:56.461 INFO  The user vidya.ebay@gmail.com adding a new advertisement 
+23:47:58.477 INFO  The user vidya.ebay@gmail.com logging out 
+23:49:05.503 INFO  The user radhika.ebay@gmail.com accessing /homepage 
+23:49:09.490 INFO  The user radhika.ebay@gmail.com accessing the advertisements page 
+23:52:45.030 INFO  The user radhika.ebay@gmail.com added Apple iPhone 7 to cart 
+23:55:32.668 INFO  The user radhika.ebay@gmail.com updated the cart 
+23:56:43.575 INFO  The user radhika.ebay@gmail.com accessing /homepage 
+23:56:45.509 INFO  The user radhika.ebay@gmail.com accessing the advertisements page 
+23:56:49.547 INFO  The user radhika.ebay@gmail.com added Apple EarPods to cart 
+23:58:38.288 INFO  The user radhika.ebay@gmail.com removed Apple iPhone 7 from cart 
+23:59:40.730 INFO  The user radhika.ebay@gmail.com accessing /homepage 
+00:04:40.061 INFO  The user radhika.ebay@gmail.com placed an order 
+00:09:19.482 INFO  The user radhika.ebay@gmail.com accessing the advertisements page 
+00:11:31.001 INFO  The user radhika.ebay@gmail.com adding a new bid on advertisement with id 2 
+00:12:18.277 INFO  The user radhika.ebay@gmail.com adding a new bid on advertisement with id 2 
+00:14:43.405 INFO  The user radhika.ebay@gmail.com adding a new bid on advertisement with id 4 
+00:14:53.283 INFO  The user radhika.ebay@gmail.com adding a new bid on advertisement with id 4 
+00:17:06.787 INFO  The user radhika.ebay@gmail.com logging out 
+00:17:16.573 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+00:17:21.960 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+00:17:27.447 INFO  The user vidya.ebay@gmail.com accessing the advertisements page 
+00:17:39.160 INFO  The user vidya.ebay@gmail.com added Apple iPhone 7 to cart 
+00:17:55.660 INFO  The user vidya.ebay@gmail.com placed an order 
+00:17:58.189 INFO  The user vidya.ebay@gmail.com accessing the user profile 
+00:19:10.610 INFO  The user vidya.ebay@gmail.com accessing /homepage 
+00:23:00.914 INFO  The user vidya.ebay@gmail.com logging out 
+01:48:30.789 INFO  The user divya.ebay@gmail.com accessing /homepage 
+01:51:02.186 INFO  The user divya.ebay@gmail.com logging out 
+01:51:17.693 INFO  The user divya.ebay@gmail.com accessing /homepage 
+01:03:12.131 INFO  The user divya.ebay@gmail.com accessing /homepage 

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shop | eBay</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<!-- Loading the AngularJS file from /public/angularJS folder -->
+<script src="angularjs/buyItems.js"></script>
+
+</head>
+<body ng-app="advertisements" ng-controller="advertisements"
+	ng-init="listAds();">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="col-md-2">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/homepage"><img width="250"
+						height="200"
+						style="clip: rect(47px, 118px, 95px, 0px); position: absolute; top: -47px; left: 0"
+						alt=""
+						src="https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png"
+						id="gh-logo"></img></a>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<ul class="nav navbar-nav">
+					<li><a href="/userprofile">Hi <strong><%= name %></strong>!
+					</a></li>
+					<li><a href="/marketPlace">Sell</a></li>
+					<li><a href="/advertisements">Shop</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/loadProfile">My eBay</a></li>
+					<li><a href="/loadCart">My Cart</a></li>
+					<li><a href="/logout"><span
+							class="glyphicon glyphicon-user"></span> Sign out</a></li> &nbsp;&nbsp;
+					<li><a href="#">Last logged in : <%= lastlogin %></a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+	
+
+	<div class="container-fluid">
+
+		<h2 style="color: #767676; font-size: 18px; font-weight: bold;">Shop Now</h2>
+
+		<form ng-submit="addtocart();" method="post” name="
+			add_cart” data-toggle="validator">
+			<ul class="list-group">
+				<li class="list-group-item"
+					ng-repeat="ad in fixedPriceAdvertisements"
+					ng-click="$parent.selected = ad">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="alert alert-danger"
+								ng-hide="quantity_error || $parent.selected != ad">
+								<strong>Inventory not available! Select lesser quantity</strong>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="alert alert-danger"
+								ng-hide="unexpected_error || $parent.selected != ad">
+								<strong>Unexpected error, try again</strong>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row" ng-click="resetErrors()">
+						<div class="col-md-3">
+							<img
+								src="http://freddesign.co.uk/wp-content/uploads/2013/09/blue_aqua_apple_logo.jpg"
+								id="no_image"></img>
+						</div>
+						<div class="col-md-5">
+							<h3>{{ ad.advertisements.itemname }}</h3>
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<td>Description</td>
+										<td>{{ ad.advertisements.itemdesc }}</td>
+
+									</tr>
+									<tr>
+										<td>Price</td>
+										<td>{{ ad.advertisements.itemprice }}</td>
+
+									</tr>
+									<tr>
+										<td>Quantities available</td>
+										<td>{{ ad.advertisements.itemquantity }}</td>
+
+									</tr>
+									<tr>
+										<td>Seller information</td>
+										<td>{{ad.firstname}}</td>
+
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-4">
+
+							<div class="row">
+								<div class="col-xs-12" style="height: 60px;"></div>
+							</div>
+							<div class="form-group">
+								<label for="quantity">Select quantity:</label> <input
+									type="number" min="1" class="form-control" name="quantity"
+									id="quantity" ng-model="test.quantity[ad]">
+							</div>
+
+
+							<button type="submit" class="btn btn-primary">Add to
+								Cart</button>
+
+						</div>
+					</div>
+
+
+
+				</li>
+
+
+			</ul>
+		</form>
+	</div>
+
+	<div class="container-fluid">
+		<h2 style="color: #767676; font-size: 18px; font-weight: bold;">Bid for your favorite</h2>
+		<form ng-submit="addbid();" method="post” name=" add_bid” novalidate>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="ad in auctionAdvertisements"
+					ng-click="$parent.bidselected = ad">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="alert alert-danger"
+								ng-hide="quantity_error || $parent.bidselected != ad">
+								<strong>Inventory not available! Select lesser quantity</strong>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="alert alert-danger"
+								ng-hide="unexpected_error || $parent.bidselected != ad">
+								<strong>Unexpected error, try again</strong>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="alert alert-success"
+								ng-hide="add_bid || $parent.bidselected != ad">
+								<strong>Your bid details has been sent to the seller!</strong>
+							</div>
+						</div>
+					</div>
+
+					<div class="row" ng-click="resetErrors()">
+						<div class="col-md-3">
+							<img
+								src="http://freddesign.co.uk/wp-content/uploads/2013/09/blue_aqua_apple_logo.jpg"
+								id="no_image"></img>
+						</div>
+						<div class="col-md-5">
+							<h3>{{ ad.advertisements.itemname }}</h3>
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<td>Description</td>
+										<td>{{ ad.advertisements.itemdesc }}</td>
+
+									</tr>
+									<tr>
+										<td>Expected Price</td>
+										<td>{{ ad.advertisements.itemprice }}</td>
+
+									</tr>
+									<tr>
+										<td>Quantities available</td>
+										<td>{{ ad.advertisements.itemquantity }}</td>
+
+									</tr>
+									<tr>
+										<td>Seller information</td>
+										<td>{{ad.firstname}}</td>
+
+									</tr>
+									<tr>
+										<td>Bid Price</td>
+										<td><input type="number" min="1" class="form-control"
+											name="bidprice" id="bidprice" ng-model="test.bid[ad]"></td>
+
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-4">
+
+							<div class="row">
+								<div class="col-xs-12" style="height: 60px;"></div>
+							</div>
+							<div class="form-group">
+								<label for="quantity">Select quantity:</label> <input
+									type="number" min="1" class="form-control" name="quantity"
+									id="quantity" ng-model="test.bidquantity[ad]">
+							</div>
+
+
+							<button type="submit" class="btn btn-primary">Start
+								Bidding</button>
+
+						</div>
+					</div>
+
+
+
+				</li>
+
+
+			</ul>
+		</form>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12" style="height: 80px;"></div>
+	</div>
+
+
+</body>
+</html>

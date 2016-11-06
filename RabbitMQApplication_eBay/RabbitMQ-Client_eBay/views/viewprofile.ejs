@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shop | eBay</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+<!-- Loading the AngularJS file from /public/angularJS folder -->
+<script src="angularjs/profile.js"></script>
+
+</head>
+<body ng-app="profile" ng-controller="profile" ng-init="loadProfile();"
+	class="cartpage">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="col-md-2">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/homepage"><img width="250"
+						height="200"
+						style="clip: rect(47px, 118px, 95px, 0px); position: absolute; top: -47px; left: 0"
+						alt=""
+						src="https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png"
+						id="gh-logo"></img></a>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<ul class="nav navbar-nav">
+					<li><a href="/userprofile">Hi <strong><%= name %></strong>!
+					</a></li>
+					<li><a href="/marketPlace">Sell</a></li>
+					<li><a href="/advertisements">Shop</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/loadProfile">My eBay</a></li>
+					<li><a href="/loadCart">My Cart</a></li>
+					<li><a href="/logout"><span
+							class="glyphicon glyphicon-user"></span> Sign out</a></li>
+					&nbsp;&nbsp;<li><a href="#">Last logged in : <%= lastlogin %></a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+	
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6">
+				<h2 style="color: #767676; font-size: 18px; font-weight: bold;">My
+					Orders</h2>
+				<br>
+				<div class="cartdata"
+					style="background-color: #fff; border-bottom: 1px solid #ccc;">
+
+
+					<ul class="list-group">
+
+						<li class="list-group-item" ng-repeat="item in orders">
+							<div class="sellername">
+								Seller <a href="#">{{item.firstname}}</a>
+							</div> <br> <!-- <h4 class="list-group-item-heading disabled">Seller {{item.sellerName}}</h4> -->
+							<div class="row">
+								<div class="col-md-3">
+									<img class="img-thumbnail"
+										src="http://freddesign.co.uk/wp-content/uploads/2013/09/blue_aqua_apple_logo.jpg"
+										id="no_image"></img>
+								</div>
+								<div class="col-md-4 nopadding">
+									<br> <br> <a href="#">{{item.itemname}}</a>
+									<table class="borderless">
+										<tbody>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Description:</td>
+												<td>{{ item.itemdesc }}</td>
+
+											</tr>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Price:</td>
+												<td>{{ item.itemprice }}</td>
+
+											</tr>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Available</td>
+												<td>{{ item.itemquantity }}</td>
+
+											</tr>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Seller:</td>
+												<td>{{item.firstname}}</td>
+
+											</tr>
+										</tbody>
+									</table>
+									<label for="quantity"
+										style="font-size: 75%; color: #888; cursor: default;">Quantity:</label>
+									<input id="qty" type="number" min="1" id="quantity"
+										ng-model="item.quantity" value={{item.quantity}}
+										style="width: 25%;" disabled>
+								</div>
+
+
+							</div>
+
+						</li>
+					</ul>
+
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h2 style="color: #767676; font-size: 18px; font-weight: bold;">My
+					Sold items</h2>
+				<br>
+				<div class="cartdata"
+					style="background-color: #fff; border-bottom: 1px solid #ccc;">
+
+
+					<ul class="list-group">
+
+						<li class="list-group-item" ng-repeat="item in soldItems">
+
+							<div class="row">
+								<div class="col-md-3">
+									<img class="img-thumbnail"
+										src="http://freddesign.co.uk/wp-content/uploads/2013/09/blue_aqua_apple_logo.jpg"
+										id="no_image"></img>
+								</div>
+								<div class="col-md-4 nopadding">
+									<br> <br> <a href="#">{{item.itemname}}</a>
+									<table class="borderless">
+										<tbody>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Description:</td>
+												<td>{{ item.itemdesc }}</td>
+
+											</tr>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Price:</td>
+												<td>{{ item.itemprice }}</td>
+
+											</tr>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Available</td>
+												<td>{{ item.itemquantity }}</td>
+
+											</tr>
+
+										</tbody>
+									</table>
+									<label for="quantity"
+										style="font-size: 75%; color: #888; cursor: default;">Quantity
+										Sold:</label> <input id="qty" type="number" min="1" id="quantity"
+										ng-model="item.quantity" value={{item.quantity}}
+										style="width: 25%;" disabled>
+								</div>
+
+
+							</div>
+
+						</li>
+					</ul>
+
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="height: 80px;"></div>
+	</div>
+
+</body>

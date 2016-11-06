@@ -1,0 +1,228 @@
+body {
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+	color: #00B7FF;
+}
+
+.pagelayout {
+	width: 400px;
+	margin: auto;
+	min-width: 400px;
+}
+
+@import url('http://getbootstrap.com/dist/css/bootstrap.css');
+
+html, body, .container-table {
+	height: 100%;
+}
+
+body {
+	padding-top: 150px;
+	padding-bottom: 130px;
+}
+
+.cartpage {
+	padding-top: 100px;
+	padding-bottom: 60px;
+	background-color: #eee;
+}
+
+.checkoutpage {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #eee;
+}
+
+.orderpage {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #eee;
+}
+
+.container-table {
+	display: table;
+}
+
+.vertical-center-row {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+html, body, .view {
+	height: 100%;
+}
+
+.view {
+	background:
+		url("http://www.alphansotech.com/wp-content/uploads/2015/12/img1.jpg")
+		no-repeat fixed;
+	background-size: cover;
+}
+
+.navbar {
+	min-height: 70px !important
+}
+
+.howtosell {
+	background-color: #f7f8ef;
+}
+
+.startsell {
+	background-image:
+		url("http://p.ebaystatic.com/aw/sell/lnd/anchor_card_7plus_new@2x.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 500px;
+}
+
+.sellcontent {
+	background-image:
+		url("http://p.ebaystatic.com/aw/sell/lnd/hero_7plus_new@2x.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 500px;
+}
+
+#no_image {
+	width: auto;
+	height: auto;
+	max-width: 75%;
+	max-height: 75%;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.viewcart {
+	margin-bottom: 0;
+}
+
+.cartcontainer {
+	margin-top: 0;
+}
+
+.checkoutcontainer {
+	padding-left: 2cm;
+}
+
+.ordercontainer {
+	padding-left: 2cm;
+}
+
+.profilecontainer {
+	padding-left: 2cm;
+}
+.carttitle {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: #fff;
+	box-shadow: 4px 4px 0 #eee;
+	padding: 10px 10px 20px;
+	color: #209900;
+	border-top: 3px solid #5ba71b;
+}
+
+.carttitle span {
+	color: #333;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.carttitle p {
+	margin-left: 60px;
+	font-size: 1.429em;
+	font-weight: 500;
+	margin: 1;
+}
+
+.titletick {
+	background-repeat: no-repeat;
+	float: left;
+	background-image:
+		url(https://secureir.ebaystatic.com/pictures/aw/pics/cmp/ds3/sprds3_18.png)
+		!important;
+	display: block;
+	background-position: -298px -2px;
+	width: 46px;
+	height: 44px;
+	margin-top: -5px;
+}
+
+.sellername {
+	min-height: 33px;
+	line-height: 32px;
+	background-color: #eee;
+	color: #666;
+	padding-left: 10px;
+	/* font-size: 87.5%; */
+}
+
+.borderless td, .borderless th {
+	border: none;
+}
+
+.nopadding {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.cartsummary {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: #fff;
+	box-shadow: 4px 4px 1px #eee;
+	padding: 17px 20px 9px;
+	margin-bottom: 20px;
+}
+
+.checkout-title {
+	font-size: 35px;
+	position: absolute;
+	margin-left: 140px;
+	top: -5px;
+}
+
+.labelimg {
+	background-image:
+		url(https://securepics.ebaystatic.com/aw/pics/checkout/payments/spr_PROX_111.svg);
+	background-repeat: no-repeat;
+	background-size: 248px 1215.5px;
+	display: inline-block;
+	vertical-align: middle;
+	background-position: -11px -506px;
+	width: 34px;
+	height: 22px;
+}
+
+.paylabel {
+	color: #666;
+	font-weight: 300;
+	font-size: 1.75rem;
+}
+
+input[type=tel] {
+	padding: 0 0 4px 0;
+	background: transparent;
+	background-image: none;
+	border: 0;
+	border-bottom: 2px solid #ddd;
+	border-radius: 0;
+	background-clip: padding-box;
+}
+
+.emptyCart {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: #fff;
+	box-shadow: 4px 4px 1px #eee;
+	padding: 10px !important;
+	margin-bottom: 20px;
+}
+
+.doshop:before {
+	content: "• ";
+}

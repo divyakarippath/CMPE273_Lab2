@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><%= title %></title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-datepicker3.css">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<!-- Loading the AngularJS file from /public/angularJS folder -->
+
+</head>
+<body>
+
+	<div class="container container-table">
+		<div class="row">
+			<div class="text-center col-md-4 col-md-offset-4">
+				<img width="250" height="200"
+					style="clip: rect(47px, 118px, 95px, 0px); position: absolute; top: -47px; left: 0"
+					alt=""
+					src="https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png"
+					id="gh-logo"></img>
+			</div>
+		</div>
+		<br> <br> <br> <br>
+		<div class="row">
+			<div class="col-md-2"></div>
+
+			<div class="col-md-5 thumbnail">
+
+				<ul class="nav nav-tabs nav-justified">
+					<li class="active"><a data-toggle="tab" href="#login">Login</a></li>
+					<li><a data-toggle="tab" href="#register">Register</a></li>
+				</ul>
+				<div class="tab-content">
+					<div id="login" class="tab-pane fade in active">
+						<form action="/checklogin" method="post" data-toggle="validator">
+							<br>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="email" class="form-control" id="email"
+										name="username" placeholder="Email" required>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="password" class="form-control" id="pwd"
+										name="password" placeholder="Password" required>
+								</div>
+							</div>
+							<% if (message != '') { %>
+
+							<div class="col-sm-12">
+								<div id="loginerror" class="alert alert-danger">
+									<strong><%= message %></strong>
+								</div>
+							</div>
+
+							<% } %>
+
+							<div class="col-sm-12">
+								<button type="submit" class="btn btn-primary"
+									style="width: 100%;">Sign in</button>
+							</div>
+							<br>
+							<div class="col-sm-12">
+								<div class="checkbox">
+									<label><input type="checkbox"> Stay signed in</label>
+								</div>
+							</div>
+						</form>
+
+					</div>
+					<div id="register" class="tab-pane fade">
+
+						<form action="/signup" method="post" data-toggle="validator">
+							<br>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="email" class="form-control" name="username"
+										placeholder="Email"  required>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="password" class="form-control" name="password"
+										placeholder="Password"  required>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input type="text" class="form-control" name="firstname"
+										placeholder="First name"  required>
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<input type="text" class="form-control" name="lastname"
+										placeholder="Last name"  required>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="text" class="form-control" name="birthday"
+										placeholder="Birthday MM/DD/YYYY"  required>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="number" class="form-control" name="mob"
+										placeholder="Mobile phone"  maxlength="10"
+										minlength="10">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="text" class="form-control" name="street"
+										placeholder="Street" >
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="text" class="form-control" name="city"
+										placeholder="City" >
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="text" class="form-control" name="state"
+										placeholder="State">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="text" class="form-control" name="country"
+										placeholder="Country">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<input type="text" class="form-control" name="zip"
+										placeholder="Zipcode">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<button type="submit" class="btn btn-primary"
+									style="width: 100%;">Register</button>
+							</div>
+
+						</form>
+
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="height: 80px;"></div>
+	</div>
+	<script>
+		$('.datepicker').datepicker({
+			startDate : '-3d'
+		});
+	</script>
+</body>
+</html>

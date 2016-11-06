@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shop | eBay</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+<!-- Loading the AngularJS file from /public/angularJS folder -->
+<script src="angularjs/buyItems.js"></script>
+</head>
+<body ng-app="advertisements" ng-controller="advertisements"
+	ng-init="loadCart();" class="checkoutpage">
+
+
+	<div class="container-fluid checkoutcontainer">
+
+		<a class="navbar-brand" href="/homepage"><img width="250"
+			height="200"
+			style="clip: rect(47px, 118px, 95px, 0px); position: absolute; top: -37px;"
+			alt=""
+			src="https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png"
+			id="gh-logo"></img></a>
+
+
+
+		<h1 class="checkout-title" style="font-weight: 200;">Checkout</h1>
+
+		<h2 style="color: #767676; font-size: 18px; font-weight: 200;">&nbsp;&nbsp;&nbsp;Pay
+			with</h2>
+
+		<div class="row">
+			<form ng-submit="placeOrder();" method="post” name="
+				add_cart” novalidate>
+				<div class="col-md-6">
+
+					<div class="paymethods"
+						style="background-color: #fff; border-bottom: 1px solid #ccc;">
+						<table class="table">
+							<tr>
+								<td><label class="paylabel"><span class="labelimg"></span>&nbsp;&nbsp;Credit
+										or debit card</label></td>
+							</tr>
+							<tr>
+								<td><br> <input ng-model="cardNumber"
+									name="cardNumber" type="tel" aria-required="true"
+									autocomplete="off" placeholder="Card number" maxlength="16">
+									<br> <br> <br> <input ng-model="date"
+									name="date" type="tel" aria-required="true" autocomplete="off"
+									placeholder="Expiration date (MM/YYYY)"><br> <br>
+									<br> <input ng-model="cvv" name="cvv" type="tel"
+									aria-required="true" autocomplete="off"
+									placeholder="Security code" maxlength="3"> <script>
+										document.getElementById("date").valueAsDate = new Date();
+										document.getElementById("date").min = new Date()
+												.toISOString().substring(0, 10);
+									</script></td>
+							</tr>
+						</table>
+					</div>
+					<br>
+					<div class="col-sm-12">
+						<div class="alert alert-danger" ng-hide="unexpected_error">
+							<strong>Unexpected error, try again</strong>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="alert alert-danger" ng-hide="card_error">
+							<strong>{{message}}</strong>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="alert alert-success" ng-hide="card_success">
+							<strong>{{message}}</strong>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-md-4">
+					<div class="checkoutsummary"
+						style="background-color: #fff; border-bottom: 1px solid #ccc;">
+						<table class="table">
+							<tr>
+								<td style="text-align: left; font-weight: 200;">Items<br>
+									Shipping
+								</td>
+								<td style="text-align: right; font-weight: 200;">$<%= total
+									%><br> Free
+								</td>
+							</tr>
+							<tr>
+								<td style="font-weight: 200; font-size: 2rem; text-align: left;">Order
+									Total</td>
+								<td
+									style="font-size: 2rem; font-weight: bold; text-align: right;"><span>$<%=
+										total %></span></td>
+
+							</tr>
+
+
+
+
+						</table>
+						<div class="wrapper" style="text-align: center;">
+							<button type="submit" class="btn btn-primary" style="width: 85%;">Confirm
+								and pay</button>
+						</div>
+						<br> <br>
+					</div>
+				</div>
+
+
+
+
+
+			</form>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-11">
+				<h2 style="color: #767676; font-size: 18px; font-weight: 200;">Review
+					items and shipping</h2>
+				<br>
+				<div class="cartdata"
+					style="background-color: #fff; border-bottom: 1px solid #ccc;">
+
+
+					<ul class="list-group">
+
+						<li class="list-group-item" ng-repeat="item in cartitems">
+							<div class="sellername">
+								Seller <a href="#">{{item.sellerName}}</a>
+							</div> <br> <!-- <h4 class="list-group-item-heading disabled">Seller {{item.sellerName}}</h4> -->
+							<div class="row">
+								<div class="col-md-3">
+									<img class="img-thumbnail"
+										src="http://freddesign.co.uk/wp-content/uploads/2013/09/blue_aqua_apple_logo.jpg"
+										id="no_image"></img>
+								</div>
+								<div class="col-md-4 nopadding">
+									<br> <br> <a href="#">{{item.itemname}}</a>
+									<table class="borderless">
+										<tbody>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Description:</td>
+												<td>{{ item.itemdesc }}</td>
+
+											</tr>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Price:</td>
+												<td>{{ item.itemprice }}</td>
+
+											</tr>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Available</td>
+												<td>{{ item.itemquantity }}</td>
+
+											</tr>
+											<tr style="font-size: 75%; color: #888;">
+												<td>Seller:</td>
+												<td>{{item.sellerName}}</td>
+
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-md-3 text-center">
+									<br> <br> <br> <label for="quantity"
+										style="font-size: 75%; color: #888; cursor: default;">Quantity:</label>
+									<input id="qty" type="number" min="1" id="quantity"
+										ng-model="item.quantity" value={{item.quantity}}
+										style="width: 25%;" disabled>
+
+									<div></div>
+
+								</div>
+								<div class="col-md-1 text-center">
+									<br> <br> <br> <span><strong>${{item.totPrice}}</strong></span>
+									<br> <br> <span style="">FREE</span> <br> <br>
+
+
+								</div>
+							</div>
+
+						</li>
+					</ul>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12" style="height: 60px;"></div>
+	</div>
+</body>
+</html>

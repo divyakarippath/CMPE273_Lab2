@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<meta http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>Shop | eBay</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="col-md-2">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/homepage"><img width="250"
+						height="200"
+						style="clip: rect(47px, 118px, 95px, 0px); position: absolute; top: -47px; left: 0"
+						alt=""
+						src="https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png"
+						id="gh-logo"></img></a>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<ul class="nav navbar-nav">
+					<li><a href="/userprofile">Hi <strong><%= name %></strong>!
+					</a></li>
+					<li><a href="/marketPlace">Sell</a></li>
+					<li><a href="/advertisements">Shop</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/loadProfile">My eBay</a></li>
+					<li><a href="/loadCart">My Cart</a></li>
+					<li><a href="/logout"><span
+							class="glyphicon glyphicon-user"></span> Sign out</a></li> &nbsp;&nbsp;
+					<li><a href="#">Last logged in : <%= lastlogin %></a></li>
+
+				</ul>
+
+			</div>
+
+		</div>
+	</nav>
+
+
+	<div class="container-fluid ordercontainer">
+		<h2 style="color: #767676; font-size: 18px; font-weight: bold;">My
+					eBay</h2>
+				<br>
+		<table class="table table-striped" style="border-color=grey;">
+			<tbody>
+				<tr class="info" bgcolor="#d6dcfe">
+					<td align="left" width="25%">Personal Information</td>
+					<td width="25%"></td>
+				</tr>
+				<tr>
+					<td align="left" width="25%"></td>
+					<td width="25%"></td>
+				</tr>
+				<tr class="info" bgcolor="#d6dcfe">
+					<td align="left" width="25%">Account Information</td>
+					<td width="25%"></td>
+				</tr>
+				<tr class="active">
+					<td align="left" width="25%">Account type</td>
+					<td align="left" width="25%">Individual</td>
+				</tr>
+				<tr class="active">
+					<td align="left" width="25%">First Name</td>
+					<td align="left" width="25%"><%= name %></td>
+				</tr>
+				<tr class="active">
+					<td align="left" width="25%">Last Name</td>
+					<td align="left" width="25%"><%= lastname %></td>
+				</tr>
+				<tr class="active">
+					<td align="left" width="25%">Birthday</td>
+					<td align="left" width="25%"><%= birthday %></td>
+				</tr>
+				<tr>
+					<td align="left" width="25%"></td>
+					<td width="25%"></td>
+				</tr>
+				<tr class="info" bgcolor="#d6dcfe">
+					<td align="left" width="25%">Email and Contact Information</td>
+					<td width="25%"></td>
+				</tr>
+				<tr class="active">
+					<td align="left" width="25%">City and State </td>
+					<td align="left" width="25%"><%= location %></td>
+				</tr>
+				<tr class="active">
+					<td align="left" width="25%">Email </td>
+					<td align="left" width="25%"><%= email %></td>
+				</tr>
+				<tr class="active">
+					<td align="left" width="25%">Mobile </td>
+					<td align="left" width="25%"><%= mob %></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	
+	<div class="row">
+		<div class="col-xs-12" style="height: 60px;"></div>
+	</div>
+</body>
+</html>

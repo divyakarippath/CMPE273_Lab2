@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sell | eBay</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<!-- Loading the AngularJS file from /public/angularJS folder -->
+<script src="angularjs/sellitem.js"></script>
+</head>
+<body ng-app="sellitem" ng-controller="sellitem">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+
+			<br>
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-2">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/homepage"><img width="250"
+							height="200"
+							style="clip: rect(47px, 118px, 95px, 0px); position: absolute; top: -47px; left: 0"
+							alt=""
+							src="https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png"
+							id="gh-logo"></img></a>
+					</div>
+				</div>
+				<div class="col-md-7"></div>
+				<div class="col-md-2">
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/logout"><span
+								class="glyphicon glyphicon-user"></span> Sign out</a></li>
+					</ul>
+
+
+				</div>
+
+			</div>
+
+			<br>
+
+		</div>
+	</nav>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<form method="post" ng-submit="sellit();" method="post” name="
+				sellit” data-toggle="validator">
+				<h2>Describe your item</h2>
+				<br>
+				<div class="col-sm-12">
+
+					<div class="form-group">
+						<label for="itemname">Item name:</label> <input type="text"
+							class="form-control" id="itemname" placeholder="Item name"
+							ng-model="itemname" required>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label for="itemdesc">Item description:</label>
+						<textarea class="form-control" rows="5" id="itemdesc"
+							ng-model="itemdesc" required></textarea>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<label class="radio-inline"> <input type="radio"
+						name="optradio" ng-model="pricetype" value="Auction">Auction
+					</label> <label class="radio-inline"> <input type="radio"
+						name="optradio" ng-model="pricetype" value="FixedPrice">Fixed price
+					</label>
+				</div>
+
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label for="itemprice">Item price:</label> <input type="number"
+							class="form-control" id="itemprice" placeholder="Item price"
+							ng-model="itemprice" required>
+					</div>
+				</div>
+				
+				<div class="col-sm-12">
+					<div class="form-group">
+						<label for="itemquantity">Item quantity:</label> <input
+							type="number" class="form-control" id="itemquantity"
+							placeholder="Item quantity" ng-model="itemquantity" required>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="alert alert-danger" ng-hide="unexpected_error">
+						<strong>Unexpected error, try again</strong>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<button type="submit" class="btn btn-primary" style="width: 50%;">List
+						it</button>
+				</div>
+				<br>
+				<div class="col-sm-12"></div>
+				<div class="col-sm-12">
+					<div class="alert alert-success" ng-hide="success_message">
+						<strong>Success!</strong> Your advertisements will be listed now
+						for others to buy.
+					</div>
+				</div>
+				<br>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="height: 60px;"></div>
+	</div>
+
+</body>
+</html>

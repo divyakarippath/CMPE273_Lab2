@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shop | eBay</title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+<!-- Loading the AngularJS file from /public/angularJS folder -->
+<script src="angularjs/buyItems.js"></script>
+
+</head>
+<body ng-app="advertisements" ng-controller="advertisements"
+	ng-init="loadCart();" class="cartpage">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="col-md-2">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/homepage"><img width="250"
+						height="200"
+						style="clip: rect(47px, 118px, 95px, 0px); position: absolute; top: -47px; left: 0"
+						alt=""
+						src="https://ir.ebaystatic.com/rs/v/fxxj3ttftm5ltcqnto1o4baovyl.png"
+						id="gh-logo"></img></a>
+				</div>
+			</div>
+			<div class="col-md-10">
+				<ul class="nav navbar-nav">
+					<li><a href="/userprofile">Hi <strong><%= name %></strong>!
+					</a></li>
+					<li><a href="/marketPlace">Sell</a></li>
+					<li><a href="/advertisements">Shop</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/loadProfile">My eBay</a></li>
+					<li><a href="/loadCart">My Cart</a></li>
+					<li><a href="/logout"><span
+							class="glyphicon glyphicon-user"></span> Sign out</a></li>
+					&nbsp;&nbsp;<li><a href="#">Last logged in : <%= lastlogin %></a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+	
+
+	<div class="container-fluid">
+		<h1
+			style="white-space: nowrap; margin-bottom: 15px; font-weight: normal; font-size: 1.846em;">Your
+			eBay Shopping Cart</h1>
+		<br>
+		<div class="row" ng-hide="<%= add_cart %>">
+
+			<div class="col-md-2"></div>
+			<div class="col-md-8 carttitle">
+
+				<!-- <div ng-hide="cart_add"> -->
+				<i class="titletick"></i>
+
+				<p>
+					<span><a href="#"> <%= recentItem %></a> was just added to
+						your cart</span>
+				</p>
+
+
+			</div>
+
+		</div>
+		<div class="row" ng-hide="<%= rem_cart %>">
+			<div class="col-md-2"></div>
+			<div class="col-md-8 carttitle">
+
+				<!-- <div ng-hide="cart_add"> -->
+				<i class="titletick"></i>
+
+				<p>
+					<span><a href="#"> <%= remItem %></a> was just removed from
+						your cart</span>
+				</p>
+
+
+			</div>
+
+		</div>
+		<br>
+		<form ng-submit="updateCart();" method="post” name="
+			update_cart” novalidate>
+			<ul class="list-group">
+
+				<li class="list-group-item" ng-repeat="item in cartitems"
+					ng-click="$parent.updated = item">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="alert alert-danger"
+								ng-hide="unexpected_error || $parent.updated != item">
+								<strong>Unexpected error, try again</strong>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="alert alert-danger"
+								ng-hide="quantity_error || $parent.updated != item">
+								<strong>Inventory not available! Select lesser quantity</strong>
+							</div>
+						</div>
+					</div>
+
+					<div class="sellername">
+						Seller <a href="#">{{item.sellerName}}</a>
+					</div> <br> <!-- <h4 class="list-group-item-heading disabled">Seller {{item.sellerName}}</h4> -->
+					<div class="row">
+						<div class="col-md-3">
+							<img class="img-thumbnail"
+								src="http://freddesign.co.uk/wp-content/uploads/2013/09/blue_aqua_apple_logo.jpg"
+								id="no_image"></img>
+						</div>
+						<div class="col-md-3 nopadding">
+							<br> <br> <a href="#">{{item.itemname}}</a>
+							<table class="borderless">
+								<tbody>
+									<tr style="font-size: 75%; color: #888;">
+										<td>Description:</td>
+										<td>{{ item.itemdesc }}</td>
+
+									</tr>
+									<tr style="font-size: 75%; color: #888;">
+										<td>Price:</td>
+										<td>{{ item.itemprice }}</td>
+
+									</tr>
+									<tr style="font-size: 75%; color: #888;">
+										<td>Available</td>
+										<td>{{ item.itemquantity }}</td>
+
+									</tr>
+									<tr style="font-size: 75%; color: #888;">
+										<td>Seller:</td>
+										<td>{{item.sellerName}}</td>
+
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-3 text-center">
+							<br> <br> <br> <label for="quantity"
+								style="font-size: 75%; color: #888; cursor: default;">Quantity:</label>
+							<input id="qty" type="number" min="1" id="quantity"
+								ng-model="item.quantity" value={{item.quantity}}
+								style="width: 25%;">
+
+							<div>
+								<br>
+
+								<button id="updateQty" type="submit" class="btn btn-primary">Update</button>
+								<br> <br>
+								<!-- <button class="btn btn-primary" ng-click="removeFromCart()">Remove</button> -->
+								<a href="" ng-click="removeFromCart(item)">Remove</a>
+							</div>
+
+						</div>
+						<div class="col-md-1 text-center">
+							<br> <br> <br> <span><strong>${{item.totPrice}}</strong></span>
+							<br> <br> <span style="">FREE</span> <br> <br>
+
+
+						</div>
+					</div>
+
+				</li>
+			</ul>
+		</form>
+	</div>
+	<div class="container-fluid" ng-hide="<%= empty_cart %>">
+		<div class="row">
+			<div class="col-md-7"></div>
+			<div class="col-md-5 cartsummary">
+				<p></p>
+				<table class="table">
+					<tbody>
+						<tr style="text-align: right;">
+							<td></td>
+							<td>Subtotal:&nbsp;&nbsp;&nbsp;&nbsp;$<%= total %> <br>
+								Shipping:&nbsp;&nbsp;&nbsp;&nbsp;FREE
+							</td>
+						</tr>
+						<tr style="text-align: right;">
+							<td></td>
+
+							<td><div style="font-weight: bold;">Total:&nbsp;&nbsp;&nbsp;$<%=
+									total %></div></td>
+
+						</tr>
+						<tr>
+							<td><button ng-click="goHomePage()" style="width: 100%;"
+									type="submit" class="btn btn-default">Continue
+									shopping</button></td>
+							<td><button ng-click="checkout()" style="width: 100%;"
+									type="submit" class="btn btn-primary">Proceed to
+									checkout</button></td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<div class="container-fluid" ng-show="<%= empty_cart %>">
+		<div class="row">
+			<div class="emptyCart">
+				<div style="color: #666; font-weight: bold;">Your shopping
+					cart is empty, but it doesn't have to be.</div>
+				<div style="padding-top: 5px;">There are lots of great deals
+					and one-of-a-kind items just waiting for you.</div>
+				<div style="padding-top: 5px;">Start shopping, and look for
+					the "Add to cart" button. You can add several items to your cart
+					from different sellers and pay for them all at once.</div>
+				<br> <label class="doshop"><a href="/homepage">Start
+						shopping and search for great deals</a></label> <br>
+
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12" style="height: 60px;"></div>
+	</div>
+
+
+
+</body>
+</html>
